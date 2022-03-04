@@ -11,52 +11,60 @@ namespace Elevator
         {
             for (; ; )
             {
-                int antaletater = 0;
-                Console.WriteLine("Hvor mange etater er der i bygningen?");
-                bool pass_check = int.TryParse((Console.ReadLine()), out antaletater);
-                int trin = 0;
-                if (antaletater > 0)
+                int max_floors = 0;
+                Console.WriteLine("How many floors do you want as maximum?");
+                bool pass_check = int.TryParse((Console.ReadLine()), out max_floors);
+                int floor = 0;
+                if (max_floors > 0)
                 {
                     for (; ; )
                     {
-                        Console.WriteLine("Hvilken etate vil du til?");
-                        int etate = (Convert.ToInt32(Console.ReadLine()));
-                        if (etate > trin && etate <= antaletater)
+                        Console.WriteLine("Choose a floor");
+                        int choosen_floor = (Convert.ToInt32(Console.ReadLine()));
+                        if (choosen_floor > floor && choosen_floor <= max_floors)
                         {
-                            etate = (etate - trin);
-                            for (int i = 0; i < etate; i++)
+                            choosen_floor = (choosen_floor - floor);
+                            for (int i = 0; i < choosen_floor; i++)
                             {
-                                Thread.Sleep(0);
-                                trin++;
-                                Console.WriteLine(("Du er nu på etate ") + (Convert.ToString(trin)));
+                                Thread.Sleep(200);
+                                floor++;
+                                if (floor == 1)
+                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'st Floor."));
+                                else if (floor == 0)
+                                    Console.WriteLine("You are now on Ground Floor.");
+                                else
+                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'th Floor."));
                             }
                         }
-                        else if (etate < trin && etate > -1)
+                        else if (choosen_floor < floor && choosen_floor > -1)
                         {
-                            etate = (trin - etate);
-                            for (int i = 0; i < etate; i++)
+                            choosen_floor = (floor - choosen_floor);
+                            for (int i = 0; i < choosen_floor; i++)
                             {
-                                Thread.Sleep(0);
-                                trin--;
-                                Console.WriteLine(("Du er nu på etate ") + (Convert.ToString(trin)));
+                                Thread.Sleep(200);
+                                floor--;
+                                if (floor == 1)
+                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'st Floor."));
+                                else if (floor == 0)
+                                    Console.WriteLine("You are now on Ground Floor.");
+                                else
+                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'th Floor."));
                             }
 
                         }
                         else
-                            Console.WriteLine("Indtast en anden etate");
-                        Console.WriteLine(("Du er på etate ") + (Convert.ToString(trin)) + (" ud af ") + (Convert.ToString(antaletater)));
-                        if (etate == 69)
+                            Console.WriteLine("Please choose a different floor");
+                        Console.WriteLine(("You are on floor ") + (Convert.ToString(floor)) + (" out of ") + (Convert.ToString(max_floors)) + (" floors"));
+                        if (choosen_floor == 69)
                             Console.WriteLine("Nice");
-                        if (etate == 420)
-                            Console.WriteLine("Smoke it");
-                        if (etate == 666)
-                            Console.WriteLine("Hail satan");
+                        if (floor == max_floors)
+                            Console.WriteLine("You are now on the Roof");
                     }
                     
                 }
                 else
                 {
-                    Console.WriteLine("Indtast et nummer over 0");
+                    Console.WriteLine("Choose a number above 0");
                 }
             }
         }
