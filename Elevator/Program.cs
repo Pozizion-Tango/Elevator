@@ -29,11 +29,11 @@ namespace Elevator
                                 Thread.Sleep(200);
                                 floor++;
                                 if (floor == 1)
-                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'st Floor."));
+                                    Console.WriteLine(("You are now on the ") + (Convert.ToString(floor)) + ("'st Floor."));
                                 else if (floor == 0)
                                     Console.WriteLine("You are now on Ground Floor.");
                                 else
-                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'th Floor."));
+                                    Console.WriteLine(("You are now on the ") + (Convert.ToString(floor)) + ("'th Floor."));
                             }
                         }
                         else if (choosen_floor < floor && choosen_floor > -1)
@@ -44,11 +44,11 @@ namespace Elevator
                                 Thread.Sleep(200);
                                 floor--;
                                 if (floor == 1)
-                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'st Floor."));
+                                    Console.WriteLine(("You are now on the ") + (Convert.ToString(floor)) + ("'st Floor."));
                                 else if (floor == 0)
                                     Console.WriteLine("You are now on Ground Floor.");
                                 else
-                                    Console.WriteLine(("You are now on the") + (Convert.ToString(floor)) + ("'th Floor."));
+                                    Console.WriteLine(("You are now on the ") + (Convert.ToString(floor)) + ("'th Floor."));
                             }
 
                         }
