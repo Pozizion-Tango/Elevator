@@ -48,7 +48,7 @@ namespace Elevator
                                 else if (floor == 0)
                                     Console.WriteLine("You are now on Ground Floor.");
                                 else
-                                    Console.WriteLine(("You are now on ") + (Convert.ToString(floor)) + ("'th Floor."));
+                                    Console.WriteLine(("You are now on the") + (Convert.ToString(floor)) + ("'th Floor."));
                             }
 
                         }
